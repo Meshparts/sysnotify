@@ -70,7 +70,7 @@ proc ::sysnotify::Send {message {title Info}} {
     }
     # Send the new notification with the required delay
     # When the notification is sent, remember the time at which this notification was sent
-    set sysnotify_aftertoken [after [expr {$dt*1000}] "tk sysnotify $title [list $message]; ::sysnotify::SetTime"]
+    set sysnotify_aftertoken [after [expr {$delay*1000}] "tk sysnotify $title [list $message]; ::sysnotify::SetTime"]
   }
 }
 proc ::sysnotify::SetTime {} {
